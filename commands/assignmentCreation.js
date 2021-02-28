@@ -50,7 +50,8 @@ exports.assignmentCreation = async (msg, content, client) => {
                   },
                 })
                 .catch(console.error);
-              await POSTass(member.id, assignmentName, assignmentDate);
+              students.push(member.id); // save student ids for db
+              //await POSTass(member.id, assignmentName, assignmentDate);
               // students.push(member.id); // save student ids for db
               // console.log(students);
               // students.forEach(async (student) => {
@@ -58,6 +59,11 @@ exports.assignmentCreation = async (msg, content, client) => {
               //   await POSTass(student, assignmentName, assignmentDate);
               // });
             }
+          });
+          console.log(students);
+          students.forEach(async (student) => {
+            console.log("ID before post", student);
+            await POSTass(student, assignmentName, assignmentDate);
           });
           client.channels.cache.get("815504994903392258").send({
             // add to list of assignments channel

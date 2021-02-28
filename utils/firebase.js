@@ -51,16 +51,23 @@ exports.GETass = async (id) => {
 };
 
 exports.POSTass = async (userID, name, date) => {
-  data = {
-    title: name,
-    date: date,
-    status: "not submitted",
-  };
+  // data = {
+  //   title: name,
+  //   date: date,
+  //   status: "not submitted",
+  // };
   const student = db.collection("users").doc(userID);
-  const unionRes = await student.update({
-    assignments: admin.firestore.FieldValue.arrayUnion(
-      new Assignment(name, "not submitted", date)
-    ),
-  });
-  console.log(unionRes);
+  console.log(student);
+  const res = await student.set(
+    {
+      assignment: [{ title: name, status: "not submitted", date: date }],
+    },
+    { merge: true }
+  );
+  // const unionRes = await student.update({
+  //   assignments: admin.firestore.FieldValue.arrayUnion(
+  //     new Assignment(name, "not submitted", date)
+  //   ),
+  // });
+  console.log(res);
 };
