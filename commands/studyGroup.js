@@ -15,19 +15,32 @@ exports.studyGroup = async (msg, content) => {
     var role = await msg.guild.roles.create({
       data: { name: groupName, mentionable: true },
     });
+    console.log(role);
     var permissions = [
       {
-        id: role,
+        id: msg.guild.id,
+        deny: ["VIEW_CHANNEL"],
+        type: "role",
+      },
+      {
+        id: role.id,
         allow: ["VIEW_CHANNEL"],
         type: "role",
       },
     ];
-    var projectCategory = await msg.guild.channels.create("test", {
+    var groupCategory = await msg.guild.channels.create(groupName, {
       type: "category",
+      permissionOverwrites: permissions,
     });
-    // var projectCategory = await msg.guild.channels.create(role, {
-    //   type: "category",
-    //   permissionOverwrites: permissions,
-    // });
+    var groupChannel = await msg.guild.channels.create(groupName, {
+      type: "text",
+      parent: groupCategory,
+      permissionOverwrites: permissions,
+    });
+    var groupVoiceChannel = await msg.guild.channels.create(groupName + " VC", {
+      type: "voice",
+      parent: groupCategory,
+      permissionOverwrites: permissions,
+    });
   }
 };
