@@ -5,13 +5,16 @@ const Discord = require("discord.js");
 
 exports.studyGroup = async (msg, content) => {
   msg.react("🤓");
-  groupName = content.substring(content.indexOf(" ") + 1);
-  var role = await msg.guild.roles.create({
-    data: { name: groupName, mentionable: true },
-  });
   var permissions = [];
+
   if (content.startsWith("public")) {
-    //do public stuff
+    groupName = content.substring(content.indexOf(" ") + 1);
+    console.log(groupName);
+
+    var role = await msg.guild.roles.create({
+      data: { name: groupName, mentionable: true },
+    });
+
     permissions = [
       {
         id: msg.guild.id,
@@ -19,11 +22,32 @@ exports.studyGroup = async (msg, content) => {
         type: "role",
       },
     ];
-    console.log("public");
   }
+
   if (content.startsWith("private")) {
-    //do private stuff
-    console.log("private");
+    details = content.substring(content.indexOf(" ") + 1);
+    groupName = details.substring(0, details.indexOf(" "));
+    console.log(groupName);
+    members = details.substring(details.indexOf(" ") + 1);
+    members = members.split(" ");
+    console.log(members);
+
+    var role = await msg.guild.roles.create({
+      data: { name: groupName, mentionable: true },
+    });
+
+    members.forEach((memberID) => {
+      var member = msg.guild.members.cache.get(memberID);
+      if (!member) {
+        msg.reply(
+          `Could not find a member in this server with an id of ${memberID}`
+        );
+      }
+      if (member) {
+        member.roles.add(role);
+      }
+    });
+
     permissions = [
       {
         id: msg.guild.id,
@@ -37,15 +61,18 @@ exports.studyGroup = async (msg, content) => {
       },
     ];
   }
+
   var groupCategory = await msg.guild.channels.create(groupName, {
     type: "category",
     permissionOverwrites: permissions,
   });
+
   var groupChannel = await msg.guild.channels.create(groupName, {
     type: "text",
     parent: groupCategory,
     permissionOverwrites: permissions,
   });
+
   var groupVoiceChannel = await msg.guild.channels.create(groupName + " VC", {
     type: "voice",
     parent: groupCategory,
