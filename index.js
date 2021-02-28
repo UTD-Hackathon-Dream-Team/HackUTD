@@ -26,7 +26,7 @@ client.on("ready", () => {
 client.on("message", async (msg) => {
   const message = msg.content.toLowerCase();
 
-  if (!msg.channel.guild && msg.content == "!assignments") {
+  if (!msg.channel.guild && msg.content == "!history") {
     getHistory(msg);
   }
 
