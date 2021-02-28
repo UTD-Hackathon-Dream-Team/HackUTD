@@ -53,7 +53,7 @@ const Portal = () => {
         <div className="container d-flex align-items-center justify-content-between">
           <div className="logo">
             <h1>
-              <a href="index.html">Selecao</a>
+              <a href="index.html">Tob</a>
             </h1>
           </div>
 
