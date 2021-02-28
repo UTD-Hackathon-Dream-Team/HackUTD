@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const moment = require("moment");
+const fs = require("fs");
 
 // !studyGroup private [name] [@users]
 // !studyGroup public [name]
@@ -78,4 +80,43 @@ exports.studyGroup = async (msg, content) => {
     parent: groupCategory,
     permissionOverwrites: permissions,
   });
+};
+
+const handleTime = (timestamp) => {
+  return moment(timestamp)
+    .format("DD/MM/YYYY - hh:mm:ss a")
+    .replace("pm", "PM")
+    .replace("am", "AM");
+};
+
+exports.fetchMessages = async (msg, client) => {
+  client.channels
+    .fetch(msg.channel.id)
+    .then(async (channel) => {
+      const messages = await channel.messages.fetch();
+
+      fs.writeFile("output.txt", "Chat Details \n", (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      });
+
+      for (const message of messages.array().reverse()) {
+        const messageDetail = `${handleTime(message.createdTimestamp)} ${
+          message.author.username
+        }#${message.author.discriminator} : ${message.content}`;
+
+        fs.appendFile("output.txt", messageDetail + "\n", (err) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+        });
+      }
+    })
+    .catch(console.error);
+
+  const attachment = new Discord.MessageAttachment("output.txt");
+  msg.author.send("Requested Chat Details", attachment);
 };
