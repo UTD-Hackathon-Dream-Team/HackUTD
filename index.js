@@ -13,6 +13,10 @@ client.on("ready", () => {
 client.on("message", async (msg) => {
   const message = msg.content.toLowerCase();
 
+  if (!msg.channel.guild) {
+    msg.author.send("Hello");
+  }
+
   if (message.startsWith("!pizza")) {
     msg.react("🍕");
   }
