@@ -62,10 +62,10 @@ const Marketing = () => {
                 Welcome to <span>Selecao</span>
               </h2>
               <p className="animate__animated fanimate__adeInUp">
-                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
-                repellendus deleniti vel. Minus et tempore modi architecto.
+                As many people have had to switch to virtual platforms, Discord
+                has been used more for classes. Our solution brings many useful
+                features for classes on Discord. We hope to bring back student
+                interaction and help ease a professor's workload.
               </p>
               <a
                 href="#about"
@@ -78,20 +78,16 @@ const Marketing = () => {
 
           <div class="carousel-item">
             <div class="carousel-container">
-              <h2 class="animate__animated animate__fadeInDown">
-                Lorem Ipsum Dolor
-              </h2>
+              <h2 class="animate__animated animate__fadeInDown">Get Started</h2>
               <p class="animate__animated animate__fadeInUp">
-                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
-                repellendus deleniti vel. Minus et tempore modi architecto.
+                To get started, go to our portal where you can view all our
+                commands as well as add and see the assignments for your class.
               </p>
               <a
                 href="/portal"
                 class="btn-get-started animate__animated animate__fadeInUp scrollto"
               >
-                Get Started
+                Go To The Portal
               </a>
             </div>
           </div>
@@ -177,9 +173,7 @@ const Marketing = () => {
                   href="#tab-1"
                 >
                   <i className="ri-gps-line"></i>
-                  <h4 className="d-none d-lg-block">
-                    Modi sit est dela pireda nest
-                  </h4>
+                  <h4 className="d-none d-lg-block">Create Assignments</h4>
                 </a>
               </li>
               <li
@@ -189,9 +183,7 @@ const Marketing = () => {
               >
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-2">
                   <i className="ri-body-scan-line"></i>
-                  <h4 className="d-none d-lg-block">
-                    Unde praesenti mara setra le
-                  </h4>
+                  <h4 className="d-none d-lg-block">Anonymous Questions</h4>
                 </a>
               </li>
               <li
@@ -202,7 +194,7 @@ const Marketing = () => {
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-3">
                   <i className="ri-sun-line"></i>
                   <h4 className="d-none d-lg-block">
-                    Pariatur explica nitro dela
+                    Students Can Form Study Groups
                   </h4>
                 </a>
               </li>
@@ -213,7 +205,9 @@ const Marketing = () => {
               >
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-4">
                   <i className="ri-store-line"></i>
-                  <h4 className="d-none d-lg-block">Nostrum qui dile node</h4>
+                  <h4 className="d-none d-lg-block">
+                    Create Queues for Multiple Uses
+                  </h4>
                 </a>
               </li>
             </ul>
@@ -223,37 +217,40 @@ const Marketing = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Voluptatem dignissimos provident quasi corporis voluptates
-                      sit assumenda.
+                      Want an easy way for students to track submitted and
+                      upcoming assignments?
                     </h3>
                     <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      By creating assignments with our bot or website students
+                      can get notified when assignments are posted and reminded
+                      near the submission date about it. Channels can also be
+                      automatically made for discussion about each one to help
+                      organize discussion.
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> Students
+                        knowing when the assignment is up can give them a head
+                        start on it
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> Reminders the
+                        day beforehand will make sure they finish on time!
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i> You can track
+                        when students submit and see when reminding students is
+                        the most effective. You can also quickly see if an
+                        extension is needed for the majority of students.
+                      </li>
+                      <li>
+                        <i className="ri-check-double-line"></i> The creation
+                        and archiving of channels related to certain assignments
+                        will help with organization and also serve as a reminder
+                        about upcoming assignments! Quick access to relevant
+                        discussion will also help them get questions answered.
                       </li>
                     </ul>
-                    <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
-                    </p>
                   </div>
                   <div className="col-lg-6 order-1 order-lg-2 text-center">
                     <img
@@ -268,40 +265,32 @@ const Marketing = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Neque exercitationem debitis soluta quos debitis quo
-                      mollitia officia est
+                      Students may not speak up during class and not get the
+                      help they need or you might get redundant questions in
+                      emails
                     </h3>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
+                      Many students may not want to speak up during class or
+                      when working on assignments and not get the help they
+                      need.
                     </p>
                     <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      You may also get redundant questions from emails so this
+                      will let you showcase frequently asked questions and the
+                      answer in one place.
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> The ability to
+                        ask anonymous questions will make sure they feel
+                        comfortable to do so and you can make sure all your
+                        students have the right tools to succeed.
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Provident
-                        mollitia neque rerum asperiores dolores quos qui a.
-                        Ipsum neque dolor voluptate nisi sed.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i>Save time and
+                        answer questions in one place as well as let students
+                        ask questions knowing the teacher or their fellow
+                        students will answer them.
                       </li>
                     </ul>
                   </div>
@@ -318,36 +307,36 @@ const Marketing = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Voluptatibus commodi ut accusamus ea repudiandae ut autem
-                      dolor ut assumenda
+                      Sometimes the best people to help students understand are
+                      students
                     </h3>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
+                      Many students choose to study together especially when
+                      they do not have access to the professor. You can make it
+                      more efficient for students to meet up to study as well as
+                      let students in the class mingle with each other.
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> With the switch
+                        to virtual classes, many students report feeling alone.
+                        Many of them enjoy mingling with the other students in
+                        classes.
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> They might have
+                        been able to start talking to people sitting next to
+                        them in lectures, but they cannot in a virtual setting.
+                        This lets students organize meetings to work on class
+                        material and meet other students!
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Provident
-                        mollitia neque rerum asperiores dolores quos qui a.
-                        Ipsum neque dolor voluptate nisi sed.
+                        <i className="ri-check-double-line"></i> By making it
+                        easier to talk within themselves, they may answer each
+                        others questions so they will have to reach out to you
+                        or TAs less.
                       </li>
                     </ul>
-                    <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
                   </div>
                   <div className="col-lg-6 order-1 order-lg-2 text-center">
                     <img
@@ -362,35 +351,28 @@ const Marketing = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Omnis fugiat ea explicabo sunt dolorum asperiores sequi
-                      inventore rerum
+                      Bring back structure to demos, office hours, asking
+                      questions, and more!
                     </h3>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
-                    </p>
-                    <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      There are many uses to create a list of users. You can use
+                      it to answer student questions during a lecture or about
+                      one, to create the order for demos for projects, and to
+                      answer questions during officer hours as well.
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i>When in person,
+                        lines were first come first serve, it is hard to tell
+                        who arrived first in certain situations. This will bring
+                        back the order!
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i>Our bot will let
+                        students add themselves to the queue, remove themself,
+                        and see their place in the list. You can process each
+                        student one by one and see all the students left
+                        remaining!
                       </li>
                     </ul>
                   </div>
@@ -411,18 +393,19 @@ const Marketing = () => {
           <div className="container">
             <div className="row" data-aos="zoom-out">
               <div className="col-lg-9 text-center text-lg-start">
-                <h3>Call To Action</h3>
+                <h3>Want to start using our Bot?</h3>
                 <p>
-                  {" "}
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
+                  To integrate our bot onto your server, uis aute irure dolor in
+                  reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                  nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id
+                  est laborum. Then click here to go the portal to view all the
+                  commands and view/add assignments for your students!
                 </p>
               </div>
               <div className="col-lg-3 cta-btn-container text-center">
                 <a className="cta-btn align-middle" href="/portal">
-                  Call To Action
+                  Go To Portal
                 </a>
               </div>
             </div>
@@ -443,16 +426,15 @@ const Marketing = () => {
                   className="collapsed question"
                   href="#faq1"
                 >
-                  Non consectetur a erat nam at lectus urna duis?{" "}
+                  What if I do not use Discord a lot?
                   <i className="bi bi-chevron-down icon-show"></i>
                   <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div id="faq1" className="collapse" data-bs-parent=".faq-list">
                   <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
-                    volutpat lacus laoreet non curabitur gravida. Venenatis
-                    lectus magna fringilla urna porttitor rhoncus dolor purus
-                    non.
+                    Our documentation and help guide should make using it a
+                    breeze! And students also have a lot of independence to use
+                    the features on their own.
                   </p>
                 </div>
               </li>
@@ -463,17 +445,15 @@ const Marketing = () => {
                   href="#faq2"
                   className="collapsed question"
                 >
-                  Feugiat scelerisque varius morbi enim nunc faucibus a
-                  pellentesque? <i className="bi bi-chevron-down icon-show"></i>
+                  How is this different than other solutions out there?{" "}
+                  <i className="bi bi-chevron-down icon-show"></i>
                   <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div id="faq2" className="collapse" data-bs-parent=".faq-list">
                   <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque
-                    habitant morbi. Id interdum velit laoreet id donec ultrices.
-                    Fringilla phasellus faucibus scelerisque eleifend donec
-                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris
-                    ultrices eros in cursus turpis massa tincidunt dui.
+                    Our solution focuses on both the ease of students and the
+                    professor. We hope to expand with any functionality you
+                    believe would also be helpful!
                   </p>
                 </div>
               </li>
@@ -484,20 +464,12 @@ const Marketing = () => {
                   href="#faq3"
                   className="collapsed question"
                 >
-                  Dolor sit amet consectetur adipiscing elit pellentesque
-                  habitant morbi?{" "}
+                  What are all the features available by this bot?
                   <i className="bi bi-chevron-down icon-show"></i>
                   <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div id="faq3" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-                    sagittis orci. Faucibus pulvinar elementum integer enim. Sem
-                    nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                    pellentesque eu tincidunt. Lectus urna duis convallis
-                    convallis tellus. Urna molestie at elementum eu facilisis
-                    sed odio morbi quis
-                  </p>
+                  <p>Go to our portal and look at out command documentation!</p>
                 </div>
               </li>
 
@@ -507,17 +479,16 @@ const Marketing = () => {
                   href="#faq4"
                   className="collapsed question"
                 >
-                  Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?{" "}
+                  Why do I have to enter if students completed assignments?
                   <i className="bi bi-chevron-down icon-show"></i>
                   <i className="bi bi-chevron-up icon-close"></i>
                 </div>
                 <div id="faq4" className="collapse" data-bs-parent=".faq-list">
                   <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque
-                    habitant morbi. Id interdum velit laoreet id donec ultrices.
-                    Fringilla phasellus faucibus scelerisque eleifend donec
-                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris
-                    ultrices eros in cursus turpis massa tincidunt dui.
+                    Currently, we were not able to integrate with Blackboard as
+                    we only had 24 hours and were not able to access it. Ideally
+                    this feature will be replaced by integration with Blackboard
+                    to even pull assignments off it and student submissions.
                   </p>
                 </div>
               </li>
@@ -528,41 +499,12 @@ const Marketing = () => {
                   href="#faq5"
                   className="collapsed question"
                 >
-                  Tempus quam pellentesque nec nam aliquam sem et tortor
-                  consequat? <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq5" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Molestie a iaculis at erat pellentesque adipiscing commodo.
-                    Dignissim suspendisse in est ante in. Nunc vel risus commodo
-                    viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                    bibendum est. Purus gravida quis blandit turpis cursus in
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq6"
-                  className="collapsed question"
-                >
-                  Tortor vitae purus faucibus ornare. Varius vel pharetra vel
-                  turpis nunc eget lorem dolor?{" "}
+                  What if I have any issues with the bot?{" "}
                   <i className="bi bi-chevron-down icon-show"></i>
                   <i className="bi bi-chevron-up icon-close"></i>
                 </div>
-                <div id="faq6" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Laoreet sit amet cursus sit amet dictum sit amet justo.
-                    Mauris vitae ultricies leo integer malesuada nunc vel.
-                    Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate
-                    eu scelerisque. Pellentesque diam volutpat commodo sed
-                    egestas egestas fringilla phasellus faucibus. Nibh tellus
-                    molestie nunc non blandit massa enim nec.
-                  </p>
+                <div id="faq5" className="collapse" data-bs-parent=".faq-list">
+                  <p>Email our support at hackathondreamteam@gmail.com.</p>
                 </div>
               </li>
             </ul>
