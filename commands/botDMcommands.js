@@ -1,8 +1,14 @@
 const Discord = require("discord.js");
 const fakeData = [
-    "Assignment 1",
-    "Assignment 2",
-    "Assignment 3",
+    {
+        name: "Assignment 1"
+    },
+    {
+        name: "Assignment 2"
+    },
+    {
+        name: "Assignment 3"
+    },
 ];
 
 exports.getHistory = async (msg) => {
