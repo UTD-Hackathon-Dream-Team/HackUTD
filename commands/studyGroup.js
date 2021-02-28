@@ -39,7 +39,7 @@ exports.studyGroup = async (msg, content) => {
     });
 
     members.forEach((memberID) => {
-      var member = msg.guild.members.cache.get(memberID);
+      var member = msg.guild.members.fetch(memberID);
       if (!member) {
         msg.reply(
           `Could not find a member in this server with an id of ${memberID}`
