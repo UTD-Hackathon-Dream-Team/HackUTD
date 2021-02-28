@@ -59,7 +59,11 @@ exports.assignmentCreation = async (msg, content, client) => {
               description: "Due " + assignmentDate,
             },
           });
-          // make channels
+          // make discussion channel for assignment
+          msg.guild.channels.create(assignmentName, {
+            type: "text",
+            parent: "815523622054658058",
+          });
           assignmentUnixTime = Date.parse(assignmentDate);
         }
         msg.react("📘");
