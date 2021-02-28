@@ -19,7 +19,7 @@ const { GETass } = require("../utils/firebase");
 const stringData = fakeData.map((info) => `${info.name} ${info.date}`);
  */
 exports.getHistory = async (msg) => {
-  assignments = await GETass();
+  assignments = await GETass(msg.author.id);
   console.log(assignments);
   const embed = new Discord.MessageEmbed()
     .setTitle("Assignment History:")
