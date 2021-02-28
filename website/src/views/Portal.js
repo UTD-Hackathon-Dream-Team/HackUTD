@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Table, Checkbox } from "antd";
+import db from "../firebase.js";
 
 const Portal = () => {
+  const [assign, setAssign] = useState(null);
+
+  useEffect(() => {
+    const load = async () => {
+      let assigns = [];
+      const querySnapshot = await db.collection("users").get();
+      console.log(querySnapshot);
+      querySnapshot.forEach((doc) => {
+        assigns.push(doc.data());
+      });
+      console.log(assigns);
+      setAssign(assigns);
+    };
+    load();
+  }, []);
+
   return (
     <div className="App">
       <header
@@ -323,149 +341,20 @@ const Portal = () => {
         <section id="faq" className="faq">
           <div className="container">
             <div className="section-title" data-aos="zoom-out">
-              <h2>F.A.Q</h2>
-              <p>Frequently Asked Questions</p>
+              <h2>Assignments</h2>
+              <p>View past and current assignments</p>
             </div>
-
-            <ul className="faq-list">
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  className="collapsed question"
-                  href="#faq1"
-                >
-                  Non consectetur a erat nam at lectus urna duis?{" "}
-                  <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq1" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
-                    volutpat lacus laoreet non curabitur gravida. Venenatis
-                    lectus magna fringilla urna porttitor rhoncus dolor purus
-                    non.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq2"
-                  className="collapsed question"
-                >
-                  Feugiat scelerisque varius morbi enim nunc faucibus a
-                  pellentesque? <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq2" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque
-                    habitant morbi. Id interdum velit laoreet id donec ultrices.
-                    Fringilla phasellus faucibus scelerisque eleifend donec
-                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris
-                    ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq3"
-                  className="collapsed question"
-                >
-                  Dolor sit amet consectetur adipiscing elit pellentesque
-                  habitant morbi?{" "}
-                  <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq3" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-                    sagittis orci. Faucibus pulvinar elementum integer enim. Sem
-                    nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                    pellentesque eu tincidunt. Lectus urna duis convallis
-                    convallis tellus. Urna molestie at elementum eu facilisis
-                    sed odio morbi quis
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq4"
-                  className="collapsed question"
-                >
-                  Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?{" "}
-                  <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq4" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque
-                    habitant morbi. Id interdum velit laoreet id donec ultrices.
-                    Fringilla phasellus faucibus scelerisque eleifend donec
-                    pretium. Est pellentesque elit ullamcorper dignissim. Mauris
-                    ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq5"
-                  className="collapsed question"
-                >
-                  Tempus quam pellentesque nec nam aliquam sem et tortor
-                  consequat? <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq5" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Molestie a iaculis at erat pellentesque adipiscing commodo.
-                    Dignissim suspendisse in est ante in. Nunc vel risus commodo
-                    viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                    bibendum est. Purus gravida quis blandit turpis cursus in
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div
-                  data-bs-toggle="collapse"
-                  href="#faq6"
-                  className="collapsed question"
-                >
-                  Tortor vitae purus faucibus ornare. Varius vel pharetra vel
-                  turpis nunc eget lorem dolor?{" "}
-                  <i className="bi bi-chevron-down icon-show"></i>
-                  <i className="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq6" className="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Laoreet sit amet cursus sit amet dictum sit amet justo.
-                    Mauris vitae ultricies leo integer malesuada nunc vel.
-                    Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate
-                    eu scelerisque. Pellentesque diam volutpat commodo sed
-                    egestas egestas fringilla phasellus faucibus. Nibh tellus
-                    molestie nunc non blandit massa enim nec.
-                  </p>
-                </div>
-              </li>
-            </ul>
+            <Table columns={columns} dataSource={data} />
           </div>
         </section>
       </main>
       <footer id="footer">
         <div className="container">
-          <h3>Selecao</h3>
+          <h3>Tob - Virtual Classroom Assistant</h3>
           <p>
-            Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni
-            eligendi fuga maxime saepe commodi placeat.
+            Do you wish class group chats were more organized? Do you miss
+            talking and working with your classmates? Tob is a discord bot to
+            help you do all this and more!
           </p>
           <div className="copyright">
             &copy; Copyright{" "}
@@ -484,3 +373,33 @@ const Portal = () => {
 };
 
 export default Portal;
+
+const columns = [
+  {
+    title: "Student Name",
+    dataIndex: "name",
+    key: "name",
+    render: (text) => <p>{text}</p>,
+  },
+  {
+    title: "Assignment 1",
+    dataIndex: "asg1",
+    key: "asg1",
+    render: (bool) => <Checkbox checked={bool} />,
+  },
+  {
+    title: "Assignment 2",
+    dataIndex: "asg2",
+    key: "asg2",
+    render: (bool) => <Checkbox checked={bool} />,
+  },
+];
+
+const data = [
+  {
+    key: "1",
+    name: "John Brown",
+    asg1: true,
+    asg2: false,
+  },
+];

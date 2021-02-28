@@ -10,7 +10,7 @@ const Marketing = () => {
         <div className="container d-flex align-items-center justify-content-between">
           <div className="logo">
             <h1>
-              <a href="index.html">Selecao</a>
+              <a href="index.html">Tob</a>
             </h1>
           </div>
 
@@ -59,7 +59,7 @@ const Marketing = () => {
           <div className="carousel-item active">
             <div className="carousel-container">
               <h2 className="animate__animated animate__fadeInDown">
-                Welcome to <span>Selecao</span>
+                Welcome to <span>Tob</span>
               </h2>
               <p className="animate__animated fanimate__adeInUp">
                 As many people have had to switch to virtual platforms, Discord
@@ -129,34 +129,40 @@ const Marketing = () => {
             <div className="row content" data-aos="fade-up">
               <div className="col-lg-6">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Do you wish class group chats were more organized? Do you miss
+                  talking and working with your classmates? Tob is a discord bot
+                  to help you do all this and more!
                 </p>
                 <ul>
                   <li>
-                    <i className="ri-check-double-line"></i> Ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat
+                    <i className="ri-check-double-line"></i> During virtual
+                    schooling, both professors and students are impacted. Our
+                    bot aims to aid them both!
                   </li>
                   <li>
-                    <i className="ri-check-double-line"></i> Duis aute irure
-                    dolor in reprehenderit in voluptate velit
+                    <i className="ri-check-double-line"></i> Students may find
+                    it harder to access both the professor and other students so
+                    we provide features to help them create study groups and
+                    interact more.
                   </li>
                   <li>
-                    <i className="ri-check-double-line"></i> Ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat
+                    <i className="ri-check-double-line"></i> Professors may find
+                    it harder to organize large groups of students. To provide
+                    them all with the best tools to suceed, our bot tries
+                    automates much of the work!
                   </li>
                 </ul>
               </div>
               <div className="col-lg-6 pt-4 pt-lg-0">
                 <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
+                  Ready to use our bot? Just get it from the Discord bot store
+                  and integrate it into your classes server! Both professors and
+                  students can do this. Currently, one admin must add in
+                  assignments and track student progress but when connected to
+                  Blackboard, there will be nothing extra professors have to do.
                 </p>
                 <a href="/portal" className="btn-learn-more">
-                  Learn More
+                  Start Using
                 </a>
               </div>
             </div>
@@ -513,10 +519,11 @@ const Marketing = () => {
       </main>
       <footer id="footer">
         <div className="container">
-          <h3>Selecao</h3>
+          <h3>Tob - Virtual Classroom Assistant</h3>
           <p>
-            Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni
-            eligendi fuga maxime saepe commodi placeat.
+            Do you wish class group chats were more organized? Do you miss
+            talking and working with your classmates? Tob is a discord bot to
+            help you do all this and more!
           </p>
           <div className="copyright">
             &copy; Copyright{" "}
