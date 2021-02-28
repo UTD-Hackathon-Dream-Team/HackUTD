@@ -46,9 +46,9 @@ client.on("message", async (msg) => {
     content = message.substr(message.indexOf(" ") + 1);
     content = content.split(" ");
 
-    if (content.length == 1) {
+    if (content.length === 1) {
       createQueue(msg, content[0]);
-    } else if (content.length == 2) {
+    } else if (content.length === 2) {
       if (content[1] === "delete") deleteQueue(msg, content[0]);
       else if (content[1] === "print") printQueue(msg, content[0]);
       else if (content[1] === "add") addToQueue(msg, content[0]);
@@ -59,6 +59,7 @@ client.on("message", async (msg) => {
     } else {
       msg.channel.send("You entered too many inputs");
     }
+    msg.delete();
   }
 });
 

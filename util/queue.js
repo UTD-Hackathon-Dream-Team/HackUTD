@@ -3,8 +3,18 @@ module.exports = class Queue {
     this.data = [];
   }
 
+  length() {
+    return this.data.length;
+  }
+
+  peek() {
+    return this.data[0];
+  }
+
   enqueue(element) {
+    if (this.find(element) !== -1) return false;
     this.data.push(element);
+    return true;
   }
 
   dequeue() {
