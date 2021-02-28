@@ -25,12 +25,19 @@ client.on("message", async (msg) => {
   if (message.startsWith("!queue")) {
     content = message.substr(message.indexOf(" ") + 1);
     content = content.split(" ");
+
     if (content.length == 1) {
-      createQueue(msg, content);
+      createQueue(msg, content[0]);
     } else if (content.length == 2) {
-      msg.react("🍕");
+      if (content[1] === "delete") deleteQueue(msg, content[0]);
+      else if (content[1] === "print") printQueue(msg, content[0]);
+      else if (content[1] === "add") addToQueue(msg, content[0]);
+      else if (content[1] === "order") sendPosition(msg, content[0]);
+      else if (content[1] === "remove") remFromQueue(msg, content[0]);
+      else if (content[1] === "next") processQueue(msg, content[0]);
+      else msg.channel.send("Your command is not recognized");
     } else {
-      msg.channel.send("bitch wut");
+      msg.channel.send("You entered too many inputs");
     }
   }
 });
