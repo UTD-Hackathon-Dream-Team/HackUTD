@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const Discord = require("discord.js");
+const { sendCommands } = require("./commands/help");
 const { getHistory, getTodo } = require("./commands/botDMcommands");
 const {
   createQueue,
@@ -32,6 +33,10 @@ client.on("message", async (msg) => {
 
   if (!msg.channel.guild && msg.content == "!todo") {
     getTodo(msg);
+  }
+
+  if (message.startsWith("!help")) {
+    sendCommands(msg);
   }
 
   if (message.startsWith("!pizza")) {
