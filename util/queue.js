@@ -1,61 +1,39 @@
-exports.queue = class Queue {
+module.exports = class Queue {
   constructor() {
     this.data = [];
-    this.rear = 0;
-    this.size = 10;
   }
 
   enqueue(element) {
-    if (this.rear < this.size) {
-      this.data[this.rear] = element;
-      this.rear = this.rear + 1;
-    }
-  }
-
-  length() {
-    return this.rear;
-  }
-
-  isEmpty() {
-    return this.rear === 0;
-  }
-
-  getFront() {
-    if (this.isEmpty() === false) {
-      return this.data[0];
-    }
-  }
-
-  getLast() {
-    if (this.isEmpty() === false) {
-      return this.data[this.rear - 1];
-    }
+    this.data.push(element);
   }
 
   dequeue() {
-    if (this.isEmpty() === false) {
-      this.rear = this.rear - 1;
-      return this.data.shift();
-    }
+    if (this.data.length !== 0) this.data.shift();
   }
 
   print() {
-    return this.data.slice(rear);
+    let res = "";
+    for (let i = 0; i < this.data.length; i++) {
+      res += i + 1 + ": " + this.data[i] + "\n";
+    }
+    return res;
   }
 
   clear() {
-    this.data.length = 0;
-    this.rear = 0;
+    this.data = [];
   }
 
   find(element) {
-    for (let i = 0; i < this.rear; i++) {
+    for (let i = 0; i < this.data.length; i++) {
       if (this.data[i] === element) return i;
     }
+    return -1;
   }
 
   remove(element) {
-    const index = find(element);
-    return array.splice(index, 1);
+    const index = this.find(element);
+    if (index === -1) return false;
+    this.data.splice(index, 1);
+    return true;
   }
 };

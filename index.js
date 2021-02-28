@@ -2,7 +2,15 @@ require("dotenv").config();
 
 const Discord = require("discord.js");
 const { getHistory, getTodo } = require("./commands/botDMcommands");
-const { createQueue } = require("./commands/queue");
+const {
+  createQueue,
+  deleteQueue,
+  printQueue,
+  addToQueue,
+  sendPosition,
+  remFromQueue,
+  processQueue,
+} = require("./commands/queue");
 const { studyGroup } = require("./commands/studyGroup");
 
 const client = new Discord.Client({

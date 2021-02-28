@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
-const queue = require("../util/queue");
+const Queue = require("../util/queue");
 
-//let queue = new Queue();
+let queue = new Queue();
 
 exports.createQueue = async (msg, content) => {
-  queue.constructor();
-  //queue.clear();
+  queue.clear();
   msg.react("👍");
 };
 
@@ -20,17 +19,27 @@ exports.addToQueue = async (msg, content) => {
 };
 
 exports.sendPosition = async (msg, content) => {
-  msg.channel.send("ur here: " + queue.find(content));
+  msg.channel.send("ur here: " + (queue.find(content) + 1));
   msg.react("👍");
 };
 
 exports.remFromQueue = async (msg, content) => {
-  queue.remove(content);
-  msg.react("👍");
+  if (queue.remove(content)) msg.react("👍");
+  else msg.channel.send("Not able to find user " + content);
 };
 
 exports.processQueue = async (msg, content) => {
   queue.dequeue();
+  msg.react("👍");
+};
+
+exports.printQueue = async (msg, content) => {
+  const embed = new Discord.MessageEmbed()
+    .setTitle("List of Users:")
+    .setColor(0x2b85d3)
+    .setDescription(queue.print());
+  msg.channel.send(embed);
+  //msg.author.send(embed);
   msg.react("👍");
 };
 
