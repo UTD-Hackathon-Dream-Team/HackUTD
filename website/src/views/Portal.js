@@ -57,9 +57,7 @@ const Portal = () => {
                   href="#tab-1"
                 >
                   <i className="ri-gps-line"></i>
-                  <h4 className="d-none d-lg-block">
-                    Modi sit est dela pireda nest
-                  </h4>
+                  <h4 className="d-none d-lg-block">Create Assignments</h4>
                 </a>
               </li>
               <li
@@ -69,9 +67,7 @@ const Portal = () => {
               >
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-2">
                   <i className="ri-body-scan-line"></i>
-                  <h4 className="d-none d-lg-block">
-                    Unde praesenti mara setra le
-                  </h4>
+                  <h4 className="d-none d-lg-block">Anonymous Questions</h4>
                 </a>
               </li>
               <li
@@ -82,7 +78,7 @@ const Portal = () => {
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-3">
                   <i className="ri-sun-line"></i>
                   <h4 className="d-none d-lg-block">
-                    Pariatur explica nitro dela
+                    Students Can Form Study Groups
                   </h4>
                 </a>
               </li>
@@ -93,7 +89,9 @@ const Portal = () => {
               >
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-4">
                   <i className="ri-store-line"></i>
-                  <h4 className="d-none d-lg-block">Nostrum qui dile node</h4>
+                  <h4 className="d-none d-lg-block">
+                    Create Queues for Multiple Uses
+                  </h4>
                 </a>
               </li>
             </ul>
@@ -103,8 +101,8 @@ const Portal = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Voluptatem dignissimos provident quasi corporis voluptates
-                      sit assumenda.
+                      Want an easy way for students to track submitted and
+                      upcoming assignments?
                     </h3>
                     <p className="font-italic">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -148,8 +146,9 @@ const Portal = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Neque exercitationem debitis soluta quos debitis quo
-                      mollitia officia est
+                      Students may not speak up during class and not get the
+                      help they need or you might get redundant questions in
+                      emails
                     </h3>
                     <p>
                       Ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -198,8 +197,8 @@ const Portal = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Voluptatibus commodi ut accusamus ea repudiandae ut autem
-                      dolor ut assumenda
+                      Sometimes the best people to help students understand are
+                      students
                     </h3>
                     <p>
                       Ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -242,35 +241,48 @@ const Portal = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Omnis fugiat ea explicabo sunt dolorum asperiores sequi
-                      inventore rerum
+                      Bring back structure to demos, office hours, asking
+                      questions, and more!
                     </h3>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
-                    </p>
-                    <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Our bot will let students add themselves to the queue,
+                      remove themself, and see their place in the list. You can
+                      process each student one by one and see all the students
+                      left remaining!
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> !queue NAME:
+                        creates a queue with the given name if it does not
+                        already exist
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> !queue NAME
+                        delete: deletes the queue with the given name
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i>!queue NAME
+                        print: prints the order of the users in the given queue
+                      </li>
+                      <li>
+                        <i className="ri-check-double-line"></i>!queue NAME add:
+                        adds the user who enters it into the given queue and DMs
+                        them a confirmation and their order number
+                      </li>
+                      <li>
+                        <i className="ri-check-double-line"></i>!queue NAME
+                        order: replies in a DM to the person who runs it their
+                        order in the given queue
+                      </li>
+                      <li>
+                        <i className="ri-check-double-line"></i>!queue NAME
+                        remove: removes the person who runs it from the given
+                        queue
+                      </li>
+                      <li>
+                        <i className="ri-check-double-line"></i>!queue NAME
+                        next: removes the first user on the queue and notifies
+                        the next one that they are up
                       </li>
                     </ul>
                   </div>
@@ -291,18 +303,17 @@ const Portal = () => {
           <div className="container">
             <div className="row" data-aos="zoom-out">
               <div className="col-lg-9 text-center text-lg-start">
-                <h3>Call To Action</h3>
+                <h3>Create an Assignment</h3>
                 <p>
-                  {" "}
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
+                  Want to create a new assignment? This will automatically
+                  create a text channel for it so students can discuss, ping
+                  students, and add it to the assignments that students will get
+                  reminded about.
                 </p>
               </div>
               <div className="col-lg-3 cta-btn-container text-center">
                 <a className="cta-btn align-middle" href="#">
-                  Call To Action
+                  Create Assignment
                 </a>
               </div>
             </div>
