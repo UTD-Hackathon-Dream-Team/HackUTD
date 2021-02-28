@@ -11,7 +11,7 @@ const {
   remFromQueue,
   processQueue,
 } = require("./commands/queue");
-const { studyGroup } = require("./commands/studyGroup");
+const { studyGroup, fetchMessages } = require("./commands/studyGroup");
 const { assignmentCreation } = require("./commands/assignmentCreation");
 
 const client = new Discord.Client({
@@ -43,6 +43,11 @@ client.on("message", async (msg) => {
     studyGroup(msg, content);
   }
 
+  if (message.startsWith("!fetch")) {
+    fetchMessages(msg, client);
+    msg.delete({ timeout: 1000 });
+  }
+
   if (message.startsWith("!queue")) {
     content = message.substr(message.indexOf(" ") + 1);
     content = content.split(" ");
@@ -64,8 +69,7 @@ client.on("message", async (msg) => {
   }
 
   if (message.startsWith("!assignment")) {
-    content = message.content;
-    assignmentCreation(msg, content);
+    assignmentCreation(msg, message.content, client);
   }
 });
 
