@@ -36,7 +36,10 @@ exports.assignmentCreation = async (msg, content, client) => {
               title: assignmentName,
               description: "Due " + assignmentDate,
             },
-          });
+          }).then(sentEmbed => {
+            sentEmbed.react("✔️")
+        });
+
           // make discussion channel for assignment
           msg.guild.channels.create(assignmentName, {
             type: "text",
