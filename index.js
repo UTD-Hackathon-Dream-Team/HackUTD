@@ -12,6 +12,7 @@ const {
   processQueue,
 } = require("./commands/queue");
 const { studyGroup, fetchMessages } = require("./commands/studyGroup");
+const { assignmentCreation } = require("./commands/assignmentCreation");
 
 const client = new Discord.Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
@@ -65,6 +66,11 @@ client.on("message", async (msg) => {
       msg.channel.send("You entered too many inputs");
     }
     msg.delete();
+  }
+
+  if (message.startsWith("!assignment")) {
+    content = message.content;
+    assignmentCreation(msg, content);
   }
 });
 

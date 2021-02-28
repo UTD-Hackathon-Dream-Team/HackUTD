@@ -18,6 +18,6 @@ exports.GETass = async (id) => {
   var assignments = [];
   const doc = await db.collection("users").doc(id).get();
   assignments = doc.data().assignments;
-  console.log(assignments);
+  //console.log(assignments);
   return assignments;
 };
