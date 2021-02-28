@@ -214,17 +214,21 @@ const Portal = () => {
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> !studygroup
+                        public 'group-name': creates a public channel and voice
+                        channel that any student can view and join
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> !studygroup
+                        private 'group-name' 'list of students' discord id':
+                        creates a role that are given to the students specified
+                        and a private channel and voice channel those students
+                        can view and join
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Provident
-                        mollitia neque rerum asperiores dolores quos qui a.
-                        Ipsum neque dolor voluptate nisi sed.
+                        <i className="ri-check-double-line"></i> !fetch: Sends a
+                        DM of the chat log of the channel the command is given
+                        in to the user who requested it
                       </li>
                     </ul>
                     <p className="font-italic">
