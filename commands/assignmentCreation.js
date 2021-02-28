@@ -22,15 +22,18 @@ exports.assignmentCreation = async (msg, content, client) => {
         message = message.first();
         assignmentDate = message.content;
 
+        students = []; // for db
         if (isNaN(Date.parse(assignmentDate))) {
           msg.channel.send("Invalid date format, please try again");
         } else {
           msg.guild.members.cache.forEach((member) => {
             console.log(member.displayName);
             if (member.roles.cache.has("815462446939897908")) {
+              // if is a student
               member;
               member
                 .send({
+                  // send them msg abt assignment
                   embed: {
                     color: 080754,
                     title: "**New Assignment Posted:**",
@@ -45,9 +48,11 @@ exports.assignmentCreation = async (msg, content, client) => {
                   },
                 })
                 .catch(console.error);
+              students.push(member.id); // save student ids for db
             }
           });
           client.channels.cache.get("815504994903392258").send({
+            // add to list of assignments channel
             embed: {
               color: 080754,
               title: assignmentName,
