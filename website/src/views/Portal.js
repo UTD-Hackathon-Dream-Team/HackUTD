@@ -123,18 +123,20 @@ const Portal = () => {
                       upcoming assignments?
                     </h3>
                     <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Students can send a DM to our bot to view their assignment 
+                      history or view a list of assignments that they need to do.
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> !history:
+                        shows a history of the student's assignments that includes
+                        the title of the assignment, the due date, and the student's
+                        submission status of that assignment
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> !todo:
+                        shows a list of the student's assignments that the student has
+                        left to complete
                       </li>
                       <li>
                         <i className="ri-check-double-line"></i> Ullamco laboris
