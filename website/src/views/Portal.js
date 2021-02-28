@@ -85,7 +85,7 @@ const Portal = () => {
               >
                 <a className="nav-link" data-bs-toggle="tab" href="#tab-2">
                   <i className="ri-body-scan-line"></i>
-                  <h4 className="d-none d-lg-block">Anonymous Questions</h4>
+                  <h4 className="d-none d-lg-block">Anonymous questions</h4>
                 </a>
               </li>
               <li
@@ -123,34 +123,41 @@ const Portal = () => {
                       upcoming assignments?
                     </h3>
                     <p className="font-italic">
-                      Students can send a DM to our bot to view their assignment 
-                      history or view a list of assignments that they need to do.
+                      Tob keeps track of your projects and assignments for you.
+                      When an assignment is posted, students will be notified
+                      with a message. Students can also send a DM to our bot to
+                      view their assignment history or view a list of
+                      assignments that they need to do.
                     </p>
                     <ul>
                       <li>
                         <i className="ri-check-double-line"></i> !history:
-                        shows a history of the student's assignments that includes
-                        the title of the assignment, the due date, and the student's
-                        submission status of that assignment
+                        (executed in DM with bot) shows a history of the
+                        student's assignments that includes the title of the
+                        assignment, the due date, and the student's submission
+                        status of that assignment
                       </li>
                       <li>
                         <i className="ri-check-double-line"></i> !todo:
-                        shows a list of the student's assignments that the student has
-                        left to complete
+                        (executed in DM with bot) shows a list of the student's
+                        assignments that the student has left to complete
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i> !assignment
+                        [assignment name]: (to be used by TAs/professors)
+                        creates an assignment. Students will receive a
+                        notification with the project name and due date, and a
+                        text channel will be created for discussion. The
+                        assignment will also be added to the assignments list
+                        channel
                       </li>
                     </ul>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
+                      When students complete an assignment, they react to it in
+                      the projects list. In the future, this can be done
+                      automatically by detecting submissions in Blackboard. This
+                      marks it as finished and will show if the student sends
+                      !history or !todo
                     </p>
                   </div>
                   <div className="col-lg-6 order-1 order-lg-2 text-center">
@@ -166,41 +173,19 @@ const Portal = () => {
                 <div className="row">
                   <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                     <h3>
-                      Students may not speak up during class and not get the
-                      help they need or you might get redundant questions in
-                      emails
+                      Let students ask questions they're too afraid to ask
                     </h3>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum
+                      Students may not speak up during class or be afraid of
+                      looking silly when asking questions and not get the help
+                      they need. Professors often get redundant questions in
+                      emails
                     </p>
-                    <p className="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
+                    <p className="font-italic"></p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Provident
-                        mollitia neque rerum asperiores dolores quos qui a.
-                        Ipsum neque dolor voluptate nisi sed.
-                      </li>
-                      <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate trideta
-                        storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        <i className="ri-check-double-line"></i> !anon
+                        [question] Simply dm the bot your question
                       </li>
                     </ul>
                   </div>
@@ -229,17 +214,21 @@ const Portal = () => {
                     </p>
                     <ul>
                       <li>
-                        <i className="ri-check-double-line"></i> Ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat.
+                        <i className="ri-check-double-line"></i> !studygroup
+                        public 'group-name': creates a public channel and voice
+                        channel that any student can view and join
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Duis aute irure
-                        dolor in reprehenderit in voluptate velit.
+                        <i className="ri-check-double-line"></i> !studygroup
+                        private 'group-name' 'list of students' discord id':
+                        creates a role that are given to the students specified
+                        and a private channel and voice channel those students
+                        can view and join
                       </li>
                       <li>
-                        <i className="ri-check-double-line"></i> Provident
-                        mollitia neque rerum asperiores dolores quos qui a.
-                        Ipsum neque dolor voluptate nisi sed.
+                        <i className="ri-check-double-line"></i> !fetch: Sends a
+                        DM of the chat log of the channel the command is given
+                        in to the user who requested it
                       </li>
                     </ul>
                     <p className="font-italic">
