@@ -57,11 +57,12 @@ exports.POSTass = async (userID, name, date) => {
   //   status: "not submitted",
   // };
   const student = db.collection("users").doc(userID);
-  const res = await student.set(
+  const res = await student.update(
     {
       assignment: [{ title: name, status: "not submitted", date: date }],
-    },
-    { merge: true }
+    }
+    // ,
+    // { merge: true }
   );
   // const unionRes = await student.update({
   //   assignments: admin.firestore.FieldValue.arrayUnion(
