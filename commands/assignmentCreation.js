@@ -3,8 +3,10 @@ const { POSTass } = require("../utils/firebase");
 
 exports.assignmentCreation = async (msg, content, client) => {
   if (
-    msg.member.roles.cache.has("815462385212194877") || // must be professor or TA to use this cmd
-    msg.member.roles.cache.has("815510702487240714")
+    // must be professor or TA to use this cmd, must be in correct channel
+    (msg.member.roles.cache.has("815462385212194877") ||
+      msg.member.roles.cache.has("815510702487240714")) &&
+    msg.channel.id === "815564151341711360"
   ) {
     msg.guild.members.fetch().catch(console.error);
     let assignmentName = msg.content.slice("!assignment".length);
@@ -27,15 +29,30 @@ exports.assignmentCreation = async (msg, content, client) => {
         if (isNaN(Date.parse(assignmentDate))) {
           msg.channel.send("Invalid date format, please try again");
         } else {
+          // add to list of assignments channel
+          client.channels.cache.get("815565009462493224").send({
+            embed: {
+              color: 080754,
+              title: assignmentName,
+              description: "Due " + assignmentDate,
+            },
+          });
+          // make discussion channel for assignment
+          msg.guild.channels.create(assignmentName, {
+            type: "text",
+            parent: "815523622054658058",
+          });
+          assignmentUnixTime = Date.parse(assignmentDate);
+
           msg.guild.members.cache.forEach(async (member) => {
             console.log(member.displayName);
+            // if is a student
             if (member.roles.cache.has("815462446939897908")) {
-              // if is a student
               member;
               console.log("ID", member.id);
               member
+                // send them msg abt assignment
                 .send({
-                  // send them msg abt assignment
                   embed: {
                     color: 080754,
                     title: "**New Assignment Posted:**",
@@ -65,25 +82,15 @@ exports.assignmentCreation = async (msg, content, client) => {
             console.log("ID before post", student);
             await POSTass(student, assignmentName, assignmentDate);
           });
-          client.channels.cache.get("815504994903392258").send({
-            // add to list of assignments channel
-            embed: {
-              color: 080754,
-              title: assignmentName,
-              description: "Due " + assignmentDate,
-            },
-          });
-          // make discussion channel for assignment
-          msg.guild.channels.create(assignmentName, {
-            type: "text",
-            parent: "815523622054658058",
-          });
-          assignmentUnixTime = Date.parse(assignmentDate);
+          msg.react("📘");
         }
-        msg.react("📘");
       })
       .catch((collected) => {
         msg.channel.send("Error, please try again");
       });
+  } else {
+    msg.channel.send(
+      "Sorry, you don't have permission to do that or are in the wrong channel"
+    );
   }
 };
