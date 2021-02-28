@@ -27,5 +27,11 @@ exports.getHistory = async (msg) => {
 };
 
 exports.getTodo = async (msg) => {
-  msg.author.send("poggers");
+    const embed = new Discord.MessageEmbed()
+    .setTitle("Assignments To-Do:")
+    .setColor(0x0)
+    .setDescription("Here is a list of assigmnents you have to do.")
+    .addFields(fakeData);
+
+    msg.author.send(embed);
 };
