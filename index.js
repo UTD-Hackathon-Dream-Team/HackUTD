@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const Discord = require("discord.js");
 const { sendCommands } = require("./commands/help");
-const { getHistory, getTodo } = require("./commands/botDMcommands");
+const { getHistory, getTodo, getAnon } = require("./commands/botDMcommands");
 const {
   createQueue,
   deleteQueue,
@@ -37,6 +37,10 @@ client.on("message", async (msg) => {
 
   if (message.startsWith("!help")) {
     sendCommands(msg);
+  }
+  
+  if (!msg.channel.guild && msg.content.startsWith("!anon")) {
+    getAnon(msg, client);
   }
 
   if (message.startsWith("!pizza")) {

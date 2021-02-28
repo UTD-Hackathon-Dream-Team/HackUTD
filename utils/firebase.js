@@ -72,3 +72,15 @@ exports.POSTass = async (userID, name, date) => {
   // });
   console.log(res);
 };
+
+exports.UPDATEass = async (id, title) => {
+  var assignments = [];
+  const doc = await db.collection("users").doc(id).get();
+  assignments = doc.data().assignments;
+  for (let i = 0; i < assignments.length; i++) {
+    if (assignments[i].title === title) {
+      // toggle to false
+    }
+  }
+  return assignments;
+};
