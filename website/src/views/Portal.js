@@ -11,13 +11,38 @@ const Portal = () => {
       const querySnapshot = await db.collection("users").get();
       console.log(querySnapshot);
       querySnapshot.forEach((doc) => {
-        assigns.push(doc.data());
+        const data = doc.data();
+        data.id = doc.id;
+        assigns.push(data);
       });
       console.log(assigns);
       setAssign(assigns);
     };
     load();
   }, []);
+
+  const createTable = () => {
+    const name = [
+      {
+        title: "Student Discord ID",
+        dataIndex: "id",
+        key: "id",
+        render: (text) => <p>{text}</p>,
+      },
+    ];
+
+    const assignHeader = assign[0].assignments.map((assign, i) => {
+      return {
+        title: assign.title,
+        dataIndex: i,
+        key: i,
+        render: (bool) => <Checkbox checked={assign.status === "submitted"} />,
+      };
+    });
+    const columns = name.concat(assignHeader);
+
+    return <Table columns={columns} dataSource={assign} />;
+  };
 
   return (
     <div className="App">
@@ -185,7 +210,8 @@ const Portal = () => {
                     <ul>
                       <li>
                         <i className="ri-check-double-line"></i> !anon
-                        [question] Simply dm the bot your question
+                        [question] Simply DM the bot your question and it will
+                        show up in a public channel on the server
                       </li>
                     </ul>
                   </div>
@@ -335,7 +361,7 @@ const Portal = () => {
               <h2>Assignments</h2>
               <p>View past and current assignments</p>
             </div>
-            <Table columns={columns} dataSource={data} />
+            {assign ? createTable() : <h2>Loading...</h2>}
           </div>
         </section>
       </main>
@@ -364,33 +390,3 @@ const Portal = () => {
 };
 
 export default Portal;
-
-const columns = [
-  {
-    title: "Student Name",
-    dataIndex: "name",
-    key: "name",
-    render: (text) => <p>{text}</p>,
-  },
-  {
-    title: "Assignment 1",
-    dataIndex: "asg1",
-    key: "asg1",
-    render: (bool) => <Checkbox checked={bool} />,
-  },
-  {
-    title: "Assignment 2",
-    dataIndex: "asg2",
-    key: "asg2",
-    render: (bool) => <Checkbox checked={bool} />,
-  },
-];
-
-const data = [
-  {
-    key: "1",
-    name: "John Brown",
-    asg1: true,
-    asg2: false,
-  },
-];
