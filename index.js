@@ -3,6 +3,7 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const { getHistory, getTodo } = require("./commands/botDMcommands");
 const { createQueue } = require("./commands/queue");
+const { studyGroup } = require("./commands/studyGroup");
 
 const client = new Discord.Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
@@ -26,6 +27,12 @@ client.on("message", async (msg) => {
 
   if (message.startsWith("!pizza")) {
     msg.react("🍕");
+  }
+
+  if (message.startsWith("!studygroup")) {
+    content = message.substr(message.indexOf(" ") + 1);
+    content = content.split(" ");
+    studyGroup(msg, content);
   }
 
   if (message.startsWith("!queue")) {
