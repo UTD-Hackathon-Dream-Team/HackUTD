@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Queue = require("../util/queue");
+const Queue = require("../utils/queue");
 
 let queue = new Queue();
 
