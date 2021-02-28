@@ -64,8 +64,7 @@ client.on("message", async (msg) => {
   }
 
   if (message.startsWith("!assignment")) {
-    content = message.content;
-    assignmentCreation(msg, content);
+    assignmentCreation(msg, message.content, client);
   }
 });
 
