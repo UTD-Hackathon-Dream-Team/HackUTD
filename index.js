@@ -17,11 +17,11 @@ client.on("ready", () => {
 client.on("message", async (msg) => {
   const message = msg.content.toLowerCase();
 
-  if (!msg.channel.guild && msg.content == '!assignments') {
+  if (!msg.channel.guild && msg.content == "!assignments") {
     getHistory(msg);
   }
 
-  if (!msg.channel.guild && msg.content == '!todo') {
+  if (!msg.channel.guild && msg.content == "!todo") {
     getTodo(msg);
   }
 
@@ -31,7 +31,6 @@ client.on("message", async (msg) => {
 
   if (message.startsWith("!studygroup")) {
     content = message.substr(message.indexOf(" ") + 1);
-    content = content.split(" ");
     studyGroup(msg, content);
   }
 
