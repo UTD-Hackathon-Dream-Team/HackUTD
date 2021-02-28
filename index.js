@@ -1,5 +1,7 @@
 require("dotenv").config();
+
 const Discord = require("discord.js");
+const { getHistory, getTodo } = require("./commands/botDMcommands");
 const { createQueue } = require("./commands/queue");
 
 const client = new Discord.Client({
@@ -14,8 +16,12 @@ client.on("ready", () => {
 client.on("message", async (msg) => {
   const message = msg.content.toLowerCase();
 
-  if (!msg.channel.guild) {
-    msg.author.send("Hello");
+  if (!msg.channel.guild && msg.content == '!assignments') {
+    getHistory(msg);
+  }
+
+  if (!msg.channel.guild && msg.content == '!todo') {
+    getTodo(msg);
   }
 
   if (message.startsWith("!pizza")) {
