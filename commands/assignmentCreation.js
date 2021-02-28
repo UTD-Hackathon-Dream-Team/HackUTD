@@ -5,10 +5,9 @@ exports.assignmentCreation = async (msg, content, client) => {
     msg.member.roles.cache.has("815462385212194877") || // must be professor or TA to use this cmd
     msg.member.roles.cache.has("815510702487240714")
   ) {
-    msg.react("📘");
     msg.guild.members.fetch().catch(console.error);
     let assignmentName = msg.content.slice("!assignment".length);
-    msg.channel.send("Enter assignment due date");
+    msg.channel.send("Enter assignment due date (mm/dd/yyyy)");
     const filter = (m) => m.author.id === msg.author.id;
     const collector = msg.channel.createMessageCollector(filter, {
       time: 15000,
@@ -55,10 +54,13 @@ exports.assignmentCreation = async (msg, content, client) => {
               description: "Due " + assignmentDate,
             },
           });
+          // make channels
+          assignmentUnixTime = Date.parse(assignmentDate);
         }
+        msg.react("📘");
+      })
+      .catch((collected) => {
+        msg.channel.send("Error, please try again");
       });
-    /*.catch((collected) => {
-      msg.channel.send("Error, please try again");
-    });*/
   }
 };
