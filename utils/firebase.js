@@ -57,7 +57,6 @@ exports.POSTass = async (userID, name, date) => {
   //   status: "not submitted",
   // };
   const student = db.collection("users").doc(userID);
-  console.log(student);
   const res = await student.set(
     {
       assignment: [{ title: name, status: "not submitted", date: date }],
