@@ -2,15 +2,15 @@ const Discord = require("discord.js");
 const fakeData = [
     {
         name: "Assignment 1",
-        date: "11/25/21"
+        value: "11/25/21"
     },
     {
         name: "Assignment 2",
-        date: "12/24/21"
+        value: "12/24/21"
     },
     {
         name: "Assignment 3",
-        date: "10/20/21"
+        value: "10/20/21"
     },
 ];
 
@@ -19,8 +19,8 @@ const stringData = fakeData.map(info => `${info.name} ${info.date}`)
 exports.getHistory = async (msg) => {
   const embed = new Discord.MessageEmbed()
     .setTitle("Assignment History:")
-    .setColor(0x2b85d3)
-    .setDescription(stringData);
+    .setColor(0xffffff)
+    .addFields(fakeData);
 
     msg.author.send(embed);
 };
