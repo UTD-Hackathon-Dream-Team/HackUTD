@@ -24,7 +24,7 @@ exports.getHistory = async (msg) => {
   //console.log(assignments);
   var data = assignments.map((item) => ({
     name: item.title,
-    value: [moment(item.date.toDate()).format("MMMM Do, YYYY"), item.status],
+    //value: [moment(item.date.toDate()).format("MMMM Do, YYYY"), item.status],
   }));
   //console.log(moment(assignments[0].date.toDate()).format("MMMM Do, YYYY"));
   const embed = new Discord.MessageEmbed()
@@ -41,7 +41,11 @@ exports.getTodo = async (msg) => {
 
   var data = [];
   var currentTime = new Date();
-  assignments.forEach(item => (item.date.toDate() >= currentTime && item.status == "not submitted") ? data.push(item) : console.log());
+  assignments.forEach((item) =>
+    item.date.toDate() >= currentTime && item.status == "not submitted"
+      ? data.push(item)
+      : console.log()
+  );
 
   var formatData = data.map((item) => ({
     name: item.title,

@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { POSTass } = require("../utils/firebase");
 
 exports.assignmentCreation = async (msg, content, client) => {
   if (
@@ -26,11 +27,12 @@ exports.assignmentCreation = async (msg, content, client) => {
         if (isNaN(Date.parse(assignmentDate))) {
           msg.channel.send("Invalid date format, please try again");
         } else {
-          msg.guild.members.cache.forEach((member) => {
+          msg.guild.members.cache.forEach(async (member) => {
             console.log(member.displayName);
             if (member.roles.cache.has("815462446939897908")) {
               // if is a student
               member;
+              console.log("ID", member.id);
               member
                 .send({
                   // send them msg abt assignment
@@ -48,7 +50,13 @@ exports.assignmentCreation = async (msg, content, client) => {
                   },
                 })
                 .catch(console.error);
-              students.push(member.id); // save student ids for db
+              await POSTass(member.id, assignmentName, assignmentDate);
+              // students.push(member.id); // save student ids for db
+              // console.log(students);
+              // students.forEach(async (student) => {
+              //   console.log("ID before post", student);
+              //   await POSTass(student, assignmentName, assignmentDate);
+              // });
             }
           });
           client.channels.cache.get("815504994903392258").send({

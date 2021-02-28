@@ -10,14 +10,57 @@ const firebaseConfig = {
 };
 
 const firebase = require("firebase");
+const admin = require("firebase-admin");
 require("firebase/firestore");
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
+
+class Assignment {
+  constructor(title, status, date) {
+    this.title = title;
+    this.status = status;
+    this.date = date;
+  }
+  toString() {
+    return this.title + ", " + this.status + ", " + this.date;
+  }
+}
+
+// Firestore data converter
+var assConverter = {
+  toFirestore: function (ass) {
+    return {
+      title: ass.title,
+      status: ass.status,
+      date: ass.date,
+    };
+  },
+  fromFirestore: function (snapshot, options) {
+    const data = snapshot.data(options);
+    return new Assignment(data.title, data.status, data.date);
+  },
+};
 
 exports.GETass = async (id) => {
   var assignments = [];
   const doc = await db.collection("users").doc(id).get();
   assignments = doc.data().assignments;
-  //console.log(assignments);
+  console.log(assignments);
+  console.log(typeof assignments);
   return assignments;
+};
+
+exports.POSTass = async (userID, name, date) => {
+  data = {
+    title: name,
+    date: date,
+    status: "not submitted",
+  };
+  const student = db.collection("users").doc(userID);
+  const unionRes = await student.update({
+    assignments: admin.firestore.FieldValue.arrayUnion(
+      new Assignment(name, "not submitted", date)
+    ),
+  });
+  console.log(unionRes);
 };
