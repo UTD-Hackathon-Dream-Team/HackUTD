@@ -38,7 +38,7 @@ client.on("message", async (msg) => {
   if (message.startsWith("!help")) {
     sendCommands(msg);
   }
-  
+
   if (!msg.channel.guild && msg.content.startsWith("!anon")) {
     getAnon(msg, client);
   }
@@ -54,7 +54,7 @@ client.on("message", async (msg) => {
 
   if (message.startsWith("!fetch")) {
     fetchMessages(msg, client);
-    msg.delete({ timeout: 1000 });
+    //msg.delete({ timeout: 1000 });
   }
 
   if (message.startsWith("!queue")) {
@@ -74,7 +74,7 @@ client.on("message", async (msg) => {
     } else {
       msg.channel.send("You entered too many inputs");
     }
-    msg.delete();
+    //msg.delete();
   }
 
   if (message.startsWith("!assignment")) {
