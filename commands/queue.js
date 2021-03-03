@@ -65,7 +65,7 @@ exports.printQueue = async (msg, content) => {
     .setTitle("List of " + content + " Users:")
     .setColor(0x2b85d3)
     .setDescription(queue.print());
-  msg.author.send(embed);
+  msg.channel.send(embed);
 };
 
 /*
