@@ -30,15 +30,18 @@ exports.assignmentCreation = async (msg, content, client) => {
           msg.channel.send("Invalid date format, please try again");
         } else {
           // add to list of assignments channel
-          client.channels.cache.get("815565009462493224").send({
-            embed: {
-              color: 080754,
-              title: assignmentName,
-              description: "Due " + assignmentDate,
-            },
-          }).then(sentEmbed => {
-            sentEmbed.react("✔️")
-        });
+          client.channels.cache
+            .get("815565009462493224")
+            .send({
+              embed: {
+                color: 080754,
+                title: assignmentName,
+                description: "Due " + assignmentDate,
+              },
+            })
+            .then((sentEmbed) => {
+              sentEmbed.react("✔️");
+            });
 
           // make discussion channel for assignment
           msg.guild.channels.create(assignmentName, {
@@ -71,13 +74,6 @@ exports.assignmentCreation = async (msg, content, client) => {
                 })
                 .catch(console.error);
               students.push(member.id); // save student ids for db
-              //await POSTass(member.id, assignmentName, assignmentDate);
-              // students.push(member.id); // save student ids for db
-              // console.log(students);
-              // students.forEach(async (student) => {
-              //   console.log("ID before post", student);
-              //   await POSTass(student, assignmentName, assignmentDate);
-              // });
             }
           });
           console.log(students);

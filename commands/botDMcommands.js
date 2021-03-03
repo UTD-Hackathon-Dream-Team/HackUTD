@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const { GETass } = require("../utils/firebase");
 var moment = require("moment");
 
@@ -37,8 +37,14 @@ exports.getHistory = async (msg) => {
 };
 
 exports.getAnon = async (msg, client) => {
-    client.channels.cache.get('815644835956523019').send(msg.content);
-  };
+  client.channels.cache.get("815644835956523019").send({
+    embed: {
+      color: 080754,
+      title: "Question",
+      description: msg.content.slice("!anon".length),
+    },
+  });
+};
 
 exports.getTodo = async (msg) => {
   assignments = await GETass(msg.author.id);
