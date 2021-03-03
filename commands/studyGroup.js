@@ -13,10 +13,6 @@ exports.studyGroup = async (msg, content) => {
     groupName = content.substring(content.indexOf(" ") + 1);
     console.log(groupName);
 
-    var role = await msg.guild.roles.create({
-      data: { name: groupName, mentionable: true },
-    });
-
     permissions = [
       {
         id: msg.guild.id,
@@ -39,7 +35,8 @@ exports.studyGroup = async (msg, content) => {
     });
 
     members.forEach((memberID) => {
-      var member = msg.guild.members.fetch(memberID);
+      console.log("member", memberID);
+      var member = msg.guild.members.cache.get(memberID);
       if (!member) {
         msg.reply(
           `Could not find a member in this server with an id of ${memberID}`
